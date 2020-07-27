@@ -1,0 +1,29 @@
+package az.test;
+
+import lombok.Getter;
+import lombok.Setter;
+
+public class LombokTest {
+
+    public static void main(String[] args) {
+        new LombokTest().accessTest();
+    }
+
+    public void accessTest() {
+        Model model = new Model();
+        Submodel submodel = new Submodel();
+        model.setSubmodel(submodel);
+        submodel.setFoobar("foobar");
+    }
+
+    @Getter
+    @Setter
+    public class Model {
+        private Submodel submodel;
+    }
+    @Getter
+    @Setter
+    public class Submodel {
+        private String foobar;
+    }
+}
