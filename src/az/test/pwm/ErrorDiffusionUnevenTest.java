@@ -2,13 +2,13 @@ package az.test.pwm;
 
 public class ErrorDiffusionUnevenTest {
 
-    private static final long TICK = 50;
+    private static final long TICK = 2;
     private static long time;
     private static long total;
 
     public static void main(String[] args) {
         DiffusionProvider p = new DiffusionProvider();
-        p.setLevel(21);
+        p.setLevel(2);
         for (int i=0; i < 10000; i++) {
             tick();
             int v = p.get();
@@ -21,7 +21,7 @@ public class ErrorDiffusionUnevenTest {
         return time;
     }
     public static void tick() {
-        time += Math.random()*TICK+1;
+        time += Math.random()*TICK;
     }
 
     public static class DiffusionProvider {
