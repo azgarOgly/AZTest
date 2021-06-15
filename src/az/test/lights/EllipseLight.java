@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 public class EllipseLight implements Light {
-    private final Color color;
+    private Color color;
 
     public EllipseLight(Color color) {
         this.color = color;
@@ -14,6 +14,8 @@ public class EllipseLight implements Light {
     public Color getColor() {
         return color;
     }
+    @Override
+    public void setColor(Color color) { this.color = color; }
 
     @Override
     public void paint(Graphics g, int x, int y, int width, int height) {
